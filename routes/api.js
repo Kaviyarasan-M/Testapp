@@ -37,7 +37,7 @@ router.post('/signup', function(req, res, next) {
 router.post('/login', function(req, res, next) {
 	User.findOne({"mobile":req.body.mobile,"password":req.body.password},function(err, Asignin){
 		if(Asignin) {
-			res.send({"message":"success"});
+			res.send({status: "true","message":"success"});
 		}else{
 			res.send({"message":"failure"});
 		}	
