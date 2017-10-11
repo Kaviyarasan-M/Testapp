@@ -35,7 +35,7 @@ router.post('/signup', function(req, res, next) {
 
 // User Signin
 router.post('/login', function(req, res, next) {
-	User.findOne({"mobile":req.body.mobile,"password":req.body.password},function(err, users){
+	User.findOne({"mobile":req.body.mobile,"password":req.body.password},['mobile','password'],function(err, users){
 		if(users) {
 			res.send(users);
 		}else{
